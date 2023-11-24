@@ -1,0 +1,106 @@
+ADT LinkQueue{
+	数据对象 D ：D = {Ai | Ai ∈ ElemType, i=1,2,3...}
+	数据关系 R ： R={<Ai-1,Ai> | Ai-1,Ai ∈ D ,i=1,2,3...}
+	且约定对头是A1,队列尾An
+	基本操作 P：
+		void InitQueue(LinkQueue *L) 
+       			操作结果：初始化队列 ，创建一个空队列
+		Status OutQueue(LinkQueue *L,ElemType *e) 
+			初始条件：队列L存在
+			操作结果：若出队队成功则返回1，否则返回0，并且出队结点值赋给e
+		Status InQueue(LinkQueue*L,ElemType &e); 
+			初始条件：队列L
+			操作结果：若入队成功则返回1
+}ADT LinkQueue
+
+ADT bookinformation{
+	数据对象D :具有相同特性的的数据元素的集合
+	数据关系R：R={<ai-1,ai> | ai-1,ai ∈ D ,i=1,2,3...}
+	且约定链表头为a0,链表尾为an
+	基本操作P：
+		bookinformation *creat()                   
+		操作结果 ：初始化图书信息 ，返回链表头head
+		void add_book(bookinformation *head)   
+		初始条件：链表头不为空
+		操作结果： 在链表尾批量增加图书信息             
+		bookinformation *del_book(bookinformation *head) 
+		初始条件：链表头不为空0
+		操作结果：批量删除图书信息 ，返回链表头            
+		void change_book(bookinformation *head)  
+		初始条件：链表头不为空
+		操作结果：批量修改图书信息          
+		void reserve_book(bookinformation *head)
+		操作结果：保存图书信息（保存到book1.txt文件）               
+		void reserve_book1(bookinformation *head)   
+         	操作结果： 保存图书信息（保存到book.txt文件） 
+		void print_book(bookinformation *head) 
+		初始条件：链表头不为空
+		操作结果;显示全部图书信息（遍历链表）                
+		void find_book(bookinformation *head) 
+		初始条件：链表头不为空
+		操作结果：进入查询图书信息页面           		
+		void find_book_id(bookinformation *head)     
+		初始条件：链表头不为空
+		操作结果：通过编号查询图书信息 	    
+ 		void find_book_name(bookinformation *head)
+		初始条件：链表头不为空
+		操作结果：通过书名查询图书信息           
+		void find_book_author(bookinformation *head)
+		初始条件：链表头不为空
+		操作结果：通过作者查询图书信息  	       
+		void find_book_publisher(bookinformation *head)
+		初始条件：链表头不为空
+		操作结果：通过出版社查询图书信息        
+		void find_book_price(bookinformation *head)
+		初始条件：链表头不为空
+		操作结果：通过价格的范围查询图书信息 
+		void backup_book(bookinformation *head)
+		初始条件：链表头不为空
+		操作结果：备份图书信息（将book.txt备份到backup.txt）
+		bookinformation *sort(bookinformation *head)
+		初始条件：链表头不为空
+		操作结果：进入排序选择页面 
+		int number_of_book(bookinformation *head)
+		初始条件：链表头不为空
+		操作结果：计算图书数量
+		void print(bookinformation *head)
+		初始条件：链表头不为空
+		操作结果：显示排序后的图书信息 
+		bookinformation *sort_book(int number , bookinformation *head , int(*compare)(bookinformation *p))
+		初始条件：链表头不为空
+		操作结果：链表冒泡排序(最难的!!!) ，并返回排序后的链表头
+		void swap(bookinformation *p)
+		初始条件：p不为空
+		操作结果：交换p和p->next的内容 
+		int compare_id(bookinformation *p)
+		初始条件：p不为空
+		操作结果：比较p和p->next的编号大小 
+		int compare_pubtime(bookinformation *p)
+		初始条件：p不为空
+		操作结果：比较p和p->next的出版时间大小
+		int compare_price(bookinformation *p)
+		初始条件：p不为空
+		操作结果：比较p和p->next的价格大小 
+		int compare_num(bookinformation *p)
+		初始条件：p不为空
+		操作结果：比较p和p->next的价格大小 		
+}ADT bookinformation
+
+
+
+
+ADT administrators users{
+	数据对象 D:具有相同特性的的数数据元素的集合
+	数据关系R:{ai Ai e D,i=1,23...}
+	基本操作P:
+		void administrators registers()
+		操作结果:注册一个账号开保存到文件administrators.txt
+		void administrators login（）
+		初始条件:文件 administrators.txt存在或者不为空
+		操作结果:成功登录后进入管理员端操作页面
+		void administrators reback()
+		初始条件:文件 administrators.txt存在或者不为空
+		操作结果:打印文件中对应账号的密码
+		void Create File()
+		操作结果: 创建储存管理员用户账号密码的文件 administrators.txt
+}ADT administrators users

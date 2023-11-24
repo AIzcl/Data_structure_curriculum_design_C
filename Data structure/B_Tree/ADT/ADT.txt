@@ -1,0 +1,59 @@
+ADT BTree{
+	数据对象：D是具有相同特性的数据元素的集合
+	数据关系：R1={<ai-1,ai>|ai-1,ai∈D，i=2，...,n}
+             	 R2={<ptr[i-1],ptr[i]>|i=1...,n}
+  		 约定a1的key[1]为关键字数组头，an的key[p->keynum]为关键字数组尾
+  		 约定ptr[i]为结点的第i个子树
+		基本操作：
+		InitBTree(t)
+		初始条件：B树已定义
+		操作结果：初始化B树
+		SearchBTNode(BTNode *p,KeyType k)
+		初始条件：结点p已存在
+		操作结果：在结点p中查找关键字k的插入位置i 
+		Result SearchBTree(BTree t,KeyType k)
+		初始条件：B树已存在
+		操作结果：在B树查找关键字k的插入位置，返回查找结果
+		InsertBTNode(BTNode *&p,int i,KeyType k,BTNode *q)
+		初始条件：结点p和结点q已存在，0<i<p->keynum
+		操作结果：将关键字k和结点q分别插入到p->key[i+1]和p->ptr[i+1]中
+		SplitBTNode(BTNode *&p,BTNode *&q)
+		初始条件：结点p和结点q已存在
+		操作结果：将结点p分裂成两个结点,前一半保留,后一半移入结点q
+		NewRoot(BTNode *&t,KeyType k,BTNode *p,BTNode *q)
+		初始条件：结点t,p,q已存在
+		操作结果：生成新的根结点t,原p和q为子树指针
+		InsertBTree(BTree &t,int i,KeyType k,BTNode *p)
+		初始条件：结点p和结点t已存在，0<i<p->keynum
+		操作结果：在B树t中插入关键字k
+		Remove(BTNode *p,int i)
+		初始条件：结点p已存在，0<i<p->keynum
+		操作结果：p结点删除key[i]和它的孩子指针ptr[i]
+		Substitution(BTNode *p,int i)
+		初始条件：结点p已存在，0<i<p->keynum
+		操作结果：查找替代值
+		MoveRight(BTNode *p,int i)
+		初始条件：结点p已存在，0<i<p->keynum
+		操作结果：结点调整右移操作
+		MoveLeft(BTNode *p,int i)
+		初始条件：结点p已存在，0<i<p->keynum
+		操作结果：结点调整左移操作
+		Combine(BTNode *p,int i)
+		初始条件：结点p已存在，0<i<p->keynum
+		操作结果：结点调整合并操作
+		AdjustBTree(BTNode *p,int i)
+		初始条件：结点p已存在，0<i<p->keynum
+		操作结果：B树调整操作
+		BTNodeDelete(BTNode *p,KeyType k)
+		初始条件：结点p已存在
+		操作结果：在结点p中删除关键字k
+		BTreeDelete(BTree &t,KeyType k)
+		初始条件：B树t已存在
+		操作结果：在B树t中删除关键字k
+		DestroyBTree(BTree &t)
+		初始条件：B树t已存在
+		操作结果：递归释放B树
+		PrintBTree(BTree t)
+		初始条件：B树t已存在
+		操作结果：遍历打印B树
+}ADT BTree
